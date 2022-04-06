@@ -15,10 +15,15 @@ public class FTPListDemo {
 
 	public static void main(String[] args) {
 
-		String server = "0.0.0.0";
+		String server = "172.20.0.1";
 		int port = 4567;
-		String user = "username";
-		String pass = "password";
+		String user = "ftpuser";
+		String pass = "Pw1337,.-";
+
+/*		scamp.ftp.user=ftpuser
+		scamp.ftp.password=Pw1337,.-
+		scamp.ftp.url=192.168.12.12
+		scamp.ftp.port=4567*/
 
 		System.out.println("Try to connect to the FTP Server!");
 
@@ -30,6 +35,8 @@ public class FTPListDemo {
 			showServerReply(ftpClient);
 
 			int replyCode = ftpClient.getReplyCode();
+			System.out.println("replyCode" + replyCode);
+
 			if (!FTPReply.isPositiveCompletion(replyCode)) {
 				System.out.println("Connect failed");
 				return;
@@ -43,8 +50,14 @@ public class FTPListDemo {
 				return;
 			}
 
+			System.out.println("Connected\n");
+
+			FTPFile[] files0 = ftpClient.mlistDir("/home/ftpuser");
+
+			System.out.println("Connected 2\n");
+
 			// List files and directories
-			FTPFile[] files1 = ftpClient.listFiles("/public_ftp");
+			FTPFile[] files1 = ftpClient.listFiles("/home/ftpuser");
 			printFileDetails(files1);
 
 			// uses simpler methods
