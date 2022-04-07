@@ -5,7 +5,6 @@ import java.text.SimpleDateFormat;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
 import org.apache.commons.net.ftp.FTPReply;
-import org.apache.commons.net.ftp.FTPSClient;
 
 /**
  * An example program that demonstrates how to list files and directories
@@ -24,7 +23,7 @@ public class FTPListDemo {
 
 		System.out.println("Try to connect to the FTP Server!");
 
-		//FTPClient ftpClient = new FTPClient();
+		FTPClient ftpClient = new FTPClient();
 		// FTPSClient ftpClient = new FTPSClient("TLS", false);
 
 		try {
