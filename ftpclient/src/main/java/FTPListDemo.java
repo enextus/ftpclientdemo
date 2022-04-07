@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPFile;
 import org.apache.commons.net.ftp.FTPReply;
+import org.apache.commons.net.ftp.FTPSClient;
 
 /**
  * An example program that demonstrates how to list files and directories
@@ -15,19 +16,29 @@ public class FTPListDemo {
 
 	public static void main(String[] args) {
 
-		String server = "172.20.0.1";
+		//String server = "172.20.0.1";
+		String server = "";
 		int port = 4567;
 		String user = "ftpuser";
 		String pass = "Pw1337,.-";
 
 		System.out.println("Try to connect to the FTP Server!");
 
-		FTPClient ftpClient = new FTPClient();
+		//FTPClient ftpClient = new FTPClient();
+		// FTPSClient ftpClient = new FTPSClient("TLS", false);
 
 		try {
 
 			ftpClient.connect(server, port);
+
+/*			ftpClient.execPBSZ(0);
+			ftpClient.execPROT("P");*/
+
+			System.out.println("____________ 1 ________________");
+
 			showServerReply(ftpClient);
+
+			System.out.println("____________ 2 ________________");
 
 			int replyCode = ftpClient.getReplyCode();
 			System.out.println("Server reply code: " + replyCode);
