@@ -15,8 +15,7 @@ public class FTPListDemo {
 
 	public static void main(String[] args) {
 
-		//String server = "172.20.0.1";
-		String server = "";
+		String server = "0.0.0.0";
 		int port = 4567;
 		String user = "ftpuser";
 		String pass = "Pw1337,.-";
@@ -24,14 +23,12 @@ public class FTPListDemo {
 		System.out.println("Try to connect to the FTP Server!");
 
 		FTPClient ftpClient = new FTPClient();
-		// FTPSClient ftpClient = new FTPSClient("TLS", false);
 
 		try {
 
 			ftpClient.connect(server, port);
 
-/*			ftpClient.execPBSZ(0);
-			ftpClient.execPROT("P");*/
+			ftpClient.enterLocalPassiveMode();
 
 			System.out.println("____________ 1 ________________");
 
@@ -49,26 +46,30 @@ public class FTPListDemo {
 
 			boolean success = ftpClient.login(user, pass);
 
-			System.out.println("success: " + success);
-
-			showServerReply(ftpClient);
-
-			System.out.println("ftpClient: " + ftpClient);
-
 			if (!success) {
 				System.out.println("Could not login to the server");
 				return;
 			}
 
-			System.out.println("Connected!\n");
+			System.out.println("Login successful? : " + success);
+			System.out.println("ftpClient: " + ftpClient);
+			showServerReply(ftpClient);
+			System.out.println("FTP Server connected!\n");
 
-			// List files and directories
-			FTPFile[] files1 = ftpClient.listFiles("/");
-			printFileDetails(files1);
+
+			FTPFile[] files = ftpClient.listFiles("/");
+			for (FTPFile file : files) {
+				System.out.println(file.getName());
+			}
 
 			// uses simpler methods
 			String[] files2 = ftpClient.listNames("/");
 			printNames(files2);
+
+
+			// List files and directories
+			FTPFile[] files1 = ftpClient.listFiles("/");
+			printFileDetails(files1);
 
 		}
 		catch (IOException ex) {
@@ -89,36 +90,9 @@ public class FTPListDemo {
 		}
 	}
 
-	static void listDirectory(FTPClient ftpClient, String parentDir,
-			String currentDir, int level) throws IOException {
-		String dirToList = parentDir;
-		if (!currentDir.equals("")) {
-			dirToList += "/" + currentDir;
-		}
-		FTPFile[] subFiles = ftpClient.listFiles(dirToList);
-		if (subFiles != null && subFiles.length > 0) {
-			for (FTPFile aFile : subFiles) {
-				String currentFileName = aFile.getName();
-				if (currentFileName.equals(".")
-						|| currentFileName.equals("..")) {
-					// skip parent directory and directory itself
-					continue;
-				}
-				for (int i = 0; i < level; i++) {
-					System.out.print("\t");
-				}
-				if (aFile.isDirectory()) {
-					System.out.println("[" + currentFileName + "]");
-					listDirectory(ftpClient, dirToList, currentFileName, level + 1);
-				} else {
-					System.out.println(currentFileName);
-				}
-			}
-		}
-	}
-
 	private static void printFileDetails(FTPFile[] files) {
 		DateFormat dateFormatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		System.out.println("\n");
 		for (FTPFile file : files) {
 			String details = file.getName();
 			if (file.isDirectory()) {
@@ -132,6 +106,7 @@ public class FTPListDemo {
 	}
 
 	private static void printNames(String[] files) {
+		System.out.println("\n");
 		if (files != null && files.length > 0) {
 			for (String aFile : files) {
 				System.out.println("aFile: " + aFile);
@@ -141,10 +116,12 @@ public class FTPListDemo {
 
 	private static void showServerReply(FTPClient ftpClient) {
 		String[] replies = ftpClient.getReplyStrings();
+		System.out.println("\n");
 		if (replies != null && replies.length > 0) {
 			for (String aReply : replies) {
 				System.out.println("SERVER: " + aReply);
 			}
 		}
 	}
+
 }
