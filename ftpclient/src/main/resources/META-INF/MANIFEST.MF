@@ -1,0 +1,40 @@
+Manifest-Version: 1.0
+Main-Class: FTPListDemo
+Class-Path: jetty-security-9.4.43.v20210629.jar jaxb-api-2.2.2.jar netty
+ -resolver-4.1.42.Final.jar jetty-webapp-9.4.43.v20210629.jar commons-co
+ nfiguration2-2.1.1.jar commons-math3-3.1.1.jar avro-1.7.7.jar commons-l
+ ogging-1.1.3.jar jetty-util-ajax-9.4.43.v20210629.jar netty-common-4.1.
+ 42.Final.jar stax-api-1.0-2.jar stax2-api-4.2.1.jar hadoop-annotations-
+ 3.3.2.jar jsr311-api-1.1.1.jar commons-collections-3.2.2.jar curator-fr
+ amework-4.2.0.jar httpclient-4.5.13.jar jackson-core-2.13.0.jar woodsto
+ x-core-5.3.0.jar jettison-1.1.jar kerby-util-1.0.1.jar kerb-core-1.0.1.
+ jar kerby-xdr-1.0.1.jar slf4j-log4j12-1.7.30.jar jetty-http-9.4.43.v202
+ 10629.jar kerb-util-1.0.1.jar dnsjava-2.1.7.jar netty-buffer-4.1.42.Fin
+ al.jar commons-net-3.8.0.jar kerby-pkix-1.0.1.jar snappy-java-1.1.8.2.j
+ ar jetty-io-9.4.43.v20210629.jar commons-beanutils-1.9.4.jar commons-ne
+ t-3.8.0.jar hadoop-shaded-guava-1.1.1.jar jaxb-impl-2.2.3-1.jar kerb-se
+ rver-1.0.1.jar jackson-xc-1.9.2.jar commons-cli-1.2.jar asm-9.1.jar com
+ mons-text-1.4.jar paranamer-2.3.jar httpcore-4.4.13.jar guava-27.0-jre.
+ jar jetty-util-9.4.43.v20210629.jar jersey-servlet-1.19.jar hadoop-auth
+ -3.3.2.jar kerb-simplekdc-1.0.1.jar netty-transport-native-epoll-4.1.42
+ .Final.jar zookeeper-jute-3.5.6.jar jackson-core-asl-1.9.2.jar kerb-cry
+ pto-1.0.1.jar gson-2.8.9.jar kerb-admin-1.0.1.jar curator-client-4.2.0.
+ jar commons-compress-1.21.jar javax.servlet-api-3.1.0.jar kerby-config-
+ 1.0.1.jar accessors-smart-2.4.7.jar failureaccess-1.0.jar nimbus-jose-j
+ wt-9.8.1.jar animal-sniffer-annotations-1.17.jar checker-qual-2.5.2.jar
+  token-provider-1.0.1.jar jsp-api-2.1.jar netty-transport-4.1.42.Final.
+ jar jcip-annotations-1.0-1.jar kerb-identity-1.0.1.jar audience-annotat
+ ions-0.5.0.jar listenablefuture-9999.0-empty-to-avoid-conflict-with-gua
+ va.jar jackson-annotations-2.13.0.jar jersey-server-1.19.jar hadoop-com
+ mon-3.3.2.jar jetty-server-9.4.43.v20210629.jar jersey-core-1.19.jar sl
+ f4j-api-1.7.30.jar j2objc-annotations-1.1.jar activation-1.1.jar hadoop
+ -shaded-protobuf_3_7-1.1.1.jar protobuf-java-2.5.0.jar commons-lang3-3.
+ 12.0.jar jetty-servlet-9.4.43.v20210629.jar kerb-common-1.0.1.jar jacks
+ on-jaxrs-1.9.2.jar jackson-mapper-asl-1.9.2.jar curator-recipes-4.2.0.j
+ ar commons-io-2.8.0.jar zookeeper-3.5.6.jar netty-transport-native-unix
+ -common-4.1.42.Final.jar jsr305-3.0.2.jar jakarta.activation-api-1.2.1.
+ jar log4j-1.2.17.jar netty-codec-4.1.42.Final.jar json-smart-2.4.7.jar 
+ jsch-0.1.55.jar re2j-1.1.jar jersey-json-1.19.jar commons-codec-1.11.ja
+ r jetty-xml-9.4.43.v20210629.jar netty-handler-4.1.42.Final.jar kerb-cl
+ ient-1.0.1.jar jackson-databind-2.13.0.jar kerby-asn1-1.0.1.jar
+
